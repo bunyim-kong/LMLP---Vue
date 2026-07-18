@@ -2,48 +2,54 @@
 <div class="head">
         <div class="navbar">
                 <div class="logo">
-                    <a href="index.html"><img src="../lmlp-logo.png" alt=""></a>
+                    <a href="/" @click="closeMobileMenu"><img src="/assets/images/lmlp-logo.png" alt=""></a>
                 </div>
 
-                <div class="menu">
+                <button class="nav-toggle" type="button" :aria-expanded="isMobileMenuOpen" aria-controls="primary-menu" @click="isMobileMenuOpen = !isMobileMenuOpen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div id="primary-menu" class="menu" :class="{ 'is-open': isMobileMenuOpen }">
                     <ul>
-                        <li><a href="#homepage">ទំព័រដើម</a></li>
+                        <li><a href="#homepage" @click="closeMobileMenu">ទំព័រដើម</a></li>
                         <li class="dropdown">
-                            <a href="#">ខេត្ត/ក្រុង ▾</a>
+                            <a href="#" @click="closeMobileMenu">ខេត្ត/ក្រុង ▾</a>
                             <div class="dropdown-content">
                                 <ul class="province-list">
-                                <li><a href="phnom-penh-index-2.html">ភ្នំពេញ</a></li>
-                                <li><a href="kandal-index.html">កណ្ដាល</a></li>
-                                <li><a href="kampong-cham-index.html">កំពង់ចាម</a></li>
-                                <li><a href="kampong-chhnang-index.html">កំពង់ឆ្នាំង</a></li>
-                                <li><a href="kampong-thom-index.html">កំពង់ធំ</a></li>
-                                <li><a href="kampong-speu-index.html">កំពង់ស្ពឺ</a></li>
-                                <li><a href="battambang-index-3.html">បាត់ដំបង</a></li>
-                                <li><a href="pailin-index.html">ប៉ៃលិន</a></li>
-                                <li><a href="kampot-index-2.html">កំពត</a></li>
-                                <li><a href="koh-kong-index.html">កោះកុង</a></li>
-                                <li><a href="kro-jes-index.html">ក្រចេះ</a></li>
-                                <li><a href="keb-index.html">កែប</a></li>
-                                <li><a href="preah-vihea-index.html">ព្រះវិហារ</a></li>
-                                <li><a href="sihanuk-index.html">ព្រះសីហនុ</a></li>
-                                <li><a href="pur-sat-index.html">ពោធិ៍សាត់</a></li>
-                                <li><a href="prey-veng-index.html">ព្រៃវែង</a></li>
-                                <li><a href="ratanakiri-index.html">រតនគីរី</a></li>
-                                <li><a href="siem-reap-index.html">សៀមរាប</a></li>
-                                <li><a href="svay-reang-index.html">ស្វាយរៀង</a></li>
-                                <li><a href="takeo-index.html">តាកែវ</a></li>
-                                <li><a href="oddar-meanchey-index.html">ឧត្ដរមានជ័យ</a></li>
-                                <li><a href="mondulkiri-index.html">មណ្ឌលគិរិ</a></li>
-                                <li><a href="stung-treng-index.html">ស្ទឹងត្រែង</a></li>
-                                <li><a href="banteay-meanchey-index.html">បន្ទាយមានជ័យ</a></li>
+                                <li><a href="/pages/phnom-penh-index-2.html" @click="closeMobileMenu">ភ្នំពេញ</a></li>
+                                <li><a href="/pages/kandal-index.html" @click="closeMobileMenu">កណ្ដាល</a></li>
+                                <li><a href="/pages/kampong-cham-index.html" @click="closeMobileMenu">កំពង់ចាម</a></li>
+                                <li><a href="/pages/kampong-chhnang-index.html" @click="closeMobileMenu">កំពង់ឆ្នាំង</a></li>
+                                <li><a href="/pages/kampong-thom-index.html" @click="closeMobileMenu">កំពង់ធំ</a></li>
+                                <li><a href="/pages/kampong-speu-index.html" @click="closeMobileMenu">កំពង់ស្ពឺ</a></li>
+                                <li><a href="/pages/battambang-index-3.html" @click="closeMobileMenu">បាត់ដំបង</a></li>
+                                <li><a href="/pages/pailin-index.html" @click="closeMobileMenu">ប៉ៃលិន</a></li>
+                                <li><a href="/pages/kampot-index-2.html" @click="closeMobileMenu">កំពត</a></li>
+                                <li><a href="/pages/koh-kong-index.html" @click="closeMobileMenu">កោះកុង</a></li>
+                                <li><a href="/pages/kro-jes-index.html" @click="closeMobileMenu">ក្រចេះ</a></li>
+                                <li><a href="/pages/keb-index.html" @click="closeMobileMenu">កែប</a></li>
+                                <li><a href="/pages/preah-vihea-index.html" @click="closeMobileMenu">ព្រះវិហារ</a></li>
+                                <li><a href="/pages/sihanuk-index.html" @click="closeMobileMenu">ព្រះសីហនុ</a></li>
+                                <li><a href="/pages/pur-sat-index.html" @click="closeMobileMenu">ពោធិ៍សាត់</a></li>
+                                <li><a href="/pages/prey-veng-index.html" @click="closeMobileMenu">ព្រៃវែង</a></li>
+                                <li><a href="/pages/ratanakiri-index.html" @click="closeMobileMenu">រតនគីរី</a></li>
+                                <li><a href="/pages/siem-reap-index.html" @click="closeMobileMenu">សៀមរាប</a></li>
+                                <li><a href="/pages/svay-reang-index.html" @click="closeMobileMenu">ស្វាយរៀង</a></li>
+                                <li><a href="/pages/takeo-index.html" @click="closeMobileMenu">តាកែវ</a></li>
+                                <li><a href="/pages/oddar-meanchey-index.html" @click="closeMobileMenu">ឧត្ដរមានជ័យ</a></li>
+                                <li><a href="/pages/mondulkiri-index.html" @click="closeMobileMenu">មណ្ឌលគិរិ</a></li>
+                                <li><a href="/pages/stung-treng-index.html" @click="closeMobileMenu">ស្ទឹងត្រែង</a></li>
+                                <li><a href="/pages/banteay-meanchey-index.html" @click="closeMobileMenu">បន្ទាយមានជ័យ</a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="#content-popular">តំបន់ពេញនិយម</a></li>
-                        <li><a href="#content-plan">ផែនការ</a></li>
-                        <li><a href="#content-discount">បញ្ចុះតម្លៃ</a></li>
-                        <li><a href="contact.html">ទំនាក់ទំនងអំពីយើង</a></li>
-                        <li><a href="about-us.html">អំពីយើង</a></li>
+                        <li><a href="#content-popular" @click="closeMobileMenu">តំបន់ពេញនិយម</a></li>
+                        <li><a href="#content-plan" @click="closeMobileMenu">ផែនការ</a></li>
+                        <li><a href="#content-discount" @click="closeMobileMenu">បញ្ចុះតម្លៃ</a></li>
+                        <li><a href="/pages/contact.html" @click="closeMobileMenu">ទំនាក់ទំនងអំពីយើង</a></li>
+                        <li><a href="/pages/about-us.html" @click="closeMobileMenu">អំពីយើង</a></li>
                     </ul>
                 </div>
         </div>
@@ -55,7 +61,7 @@
         <div class="list">
 
             <div class="item">
-                <img src="../Cultural-and-Historical-Angkor-Wat.jpg" alt="">
+                <img src="/assets/images/Cultural-and-Historical-Angkor-Wat.jpg" alt="">
 
                 <div class="item-content">
                     <p>សៀមរាប</p>
@@ -67,13 +73,13 @@
                         ព្រះមហាក្សត្រ នាសម័យកាល ចក្រភពខ្មែរ ប្រាសាទនេះសាងសង់ ដើម្បីឧទ្ទិសឱ្យ ព្រហ្មញ្ញសាសនា នៃលទ្ធិជំនឿលើ ព្រះវិស្ណុ ។</span>
                     </div>
                   
-                    <a href="siem-reap-index.html"><button>អានបន្ថែម</button></a>
+                    <a href="/pages/siem-reap-index.html" @click="closeMobileMenu"><button>អានបន្ថែម</button></a>
                 </div>
             </div>
 
 
             <div class="item">
-                <img src="../កោះកុងក្រៅ.jpg" alt="">
+                <img src="/assets/images/កោះកុងក្រៅ.jpg" alt="">
 
                 <div class="item-content">
                     <p>កោះកុង</p>
@@ -86,13 +92,13 @@
                         ដែលអាចអោយយើងគយគន់ទេសភាពយ៉ាងស្អាតបំផុត។</span>
                     </div>
                     
-                    <a href="koh-kong-index.html"><button>អានបន្ថែម</button></a>
+                    <a href="/pages/koh-kong-index.html" @click="closeMobileMenu"><button>អានបន្ថែម</button></a>
                 </div>
             </div>
 
 
             <div class="item">
-                <img src="../Bokko.jpg" alt="">
+                <img src="/assets/images/Bokko.jpg" alt="">
 
                 <div class="item-content">
                     <p>កំពត</p>
@@ -105,13 +111,13 @@
                         ១៤០០០ហិចតាយោងតាម គណៈគ្រប់គ្រងភ្នំបូកគោ។</span>
                     </div>
                  
-                    <a href="kampot-index-2.html"><button>អានបន្ថែម</button></a>
+                    <a href="/pages/kampot-index-2.html" @click="closeMobileMenu"><button>អានបន្ថែម</button></a>
                 </div>
             </div>
 
 
             <div class="item">
-                <img src="../ឆ្នេរអូរឈើទាល.jpg" alt="">
+                <img src="/assets/images/ឆ្នេរអូរឈើទាល.jpg" alt="">
 
                 <div class="item-content">
                     <p>ព្រះសីហនុ</p>
@@ -124,7 +130,7 @@
                     ក្លឹបឆ្នេរដែលស្អាតជាងគេក្នុងពិភពលោក ។</span>
                     </div>
           
-                    <a href="sihanuk-index.html"><button>អានបន្ថែម</button></a>
+                    <a href="/pages/sihanuk-index.html" @click="closeMobileMenu"><button>អានបន្ថែម</button></a>
                 </div>
             </div>
         </div>
@@ -132,7 +138,7 @@
 
         <div class="thumnail">
             <div class="thumnail-item">
-                <img src="../Cultural-and-Historical-Angkor-Wat.jpg" alt="">
+                <img src="/assets/images/Cultural-and-Historical-Angkor-Wat.jpg" alt="">
 
                 <div class="text">
                     <h1>អង្គរវត្ត</h1>
@@ -141,7 +147,7 @@
             </div>
 
             <div class="thumnail-item">
-                <img src="../កោះកុងក្រៅ.jpg" alt="">
+                <img src="/assets/images/កោះកុងក្រៅ.jpg" alt="">
 
                 <div class="text">
                     <h1>កោះកុងក្រៅ</h1>
@@ -150,7 +156,7 @@
             </div>
 
             <div class="thumnail-item">
-                <img src="../Bokko.jpg" alt="">
+                <img src="/assets/images/Bokko.jpg" alt="">
 
                 <div class="text">
                     <h1>ភ្នំបូកគោ</h1>
@@ -159,7 +165,7 @@
             </div>
 
             <div class="thumnail-item">
-                <img src="../ឆ្នេរអូរឈើទាល.jpg" alt="">
+                <img src="/assets/images/ឆ្នេរអូរឈើទាល.jpg" alt="">
 
                 <div class="text">
                     <h1>ឆ្នេរអូឈើទាល</h1>
@@ -176,7 +182,7 @@
 </div>
 
     <div class="content-intro">
-            <img src="../kbach khmer.png" alt="">
+            <img src="/assets/images/kbach khmer.png" alt="">
 
             <div class="intro-text">
                 <h1>ហេតុអ្វីអ្នកទាំងអស់គ្នាគួរមកដំណើរកំសាន្តនៅប្រទេសកម្ពុជា ?</h1>
@@ -194,27 +200,27 @@
 
     <div class="partner">
             <div class="ads">
-                <img src="../csc-express.png" alt="">
+                <img src="/assets/images/csc-express.png" alt="">
             </div>
 
             <div class="ads">
-                <img src="../Greenchainkh.png" alt="">
+                <img src="/assets/images/Greenchainkh.png" alt="">
             </div>
 
             <div class="ads">
-                <img src="../Home-me.png" alt="">
+                <img src="/assets/images/Home-me.png" alt="">
             </div>
 
             <div class="ads extra-1">
-                <img src="../ski-center-removebg-preview.png" alt="">
+                <img src="/assets/images/ski-center-removebg-preview.png" alt="">
             </div>
 
             <div class="ads extra-2">
-                <img src="../Teetra-book.png" alt="">
+                <img src="/assets/images/Teetra-book.png" alt="">
             </div>
             
             <div class="ads extra">
-                <img src="../work-star.png" alt="">
+                <img src="/assets/images/work-star.png" alt="">
             </div> 
     </div>  
 
@@ -234,7 +240,7 @@
             <div class="popular-items">
                 <div class="item">
                     <div class="item-img">
-                        <a href="beng-mealea-index.html"><img src="../beng-mealea.png" alt=""></a>
+                        <a href="/pages/beng-mealea-index.html" @click="closeMobileMenu"><img src="/assets/images/beng-mealea.png" alt=""></a>
                     </div>
 
                     
@@ -248,7 +254,7 @@
 
                 <div class="item">
                     <div class="item-img">
-                        <a href="phnom-bokor.html"><img src="../Bokko.jpg" alt=""></a>
+                        <a href="/pages/phnom-bokor.html" @click="closeMobileMenu"><img src="/assets/images/Bokko.jpg" alt=""></a>
                     </div>
 
                     
@@ -262,7 +268,7 @@
 
                 <div class="item">
                     <div class="item-img">
-                        <a href="koh-kong-krav.html"><img src="../ocher teal.jpg" alt=""></a>
+                        <a href="/pages/koh-kong-krav.html" @click="closeMobileMenu"><img src="/assets/images/ocher teal.jpg" alt=""></a>
                     </div>
 
                     
@@ -277,7 +283,7 @@
 
 
             <div class="popular-more">
-                <a href="popular-place.html" style="width: 130px; height: 50px;">
+                <a href="/pages/popular-place.html" @click="closeMobileMenu" style="width: 130px; height: 50px;">
                     <button>មើលបន្ថែម</button>
                 </a>
             </div>
@@ -298,7 +304,7 @@
                 <div class="plan-item">
                         <div class="plan-head">
                             <div class="item-icon">
-                                <img src="../medal.png" alt="">
+                                <img src="/assets/images/medal.png" alt="">
                             </div>
 
                             <div class="title">
@@ -311,7 +317,7 @@
                             យ៉ាងដូចម្តេចខ្លះ ហើយគួរសែ្វងយល់និងគួរធ្វើពីអ្វីខ្លះ? កុំបារម្ភ! ពួកយើងបានរៀបចំគម្រោងការ
                             សម្រាប់អ្នករួចហើយ ...</p>
             
-                            <a href="plan.html">អានបន្ថែម ➔</a>
+                            <a href="/pages/plan.html" @click="closeMobileMenu">អានបន្ថែម ➔</a>
                         </div>
                 </div>
 
@@ -319,7 +325,7 @@
                 <div class="plan-item">
                     <div class="plan-head">
                             <div class="item-icon">
-                                <img src="../open-book.png" alt="">
+                                <img src="/assets/images/open-book.png" alt="">
                             </div>
 
                             <div class="title">
@@ -332,7 +338,7 @@
                             ភាពអាកាសធាតុ។ ក៏គួររៀបចំឥវ៉ាន់ឲ្យសមរម្យ និងមានទំនាក់ទំនងបន្ទាន់សម្រាប់ករណីអាសន្នផងដែរ។ 
                             </p>
             
-                            <a href="plan.html">អានបន្ថែម ➔</a>
+                            <a href="/pages/plan.html" @click="closeMobileMenu">អានបន្ថែម ➔</a>
                         </div>
                 </div>
 
@@ -340,7 +346,7 @@
                 <div class="plan-item">
                     <div class="plan-head">
                             <div class="item-icon">
-                                <img src="../route.png" alt="">
+                                <img src="/assets/images/route.png" alt="">
                             </div>
 
                             <div class="title">
@@ -352,7 +358,7 @@
                             <p>យើងមានសេវាកម្មធ្វើដំណើរដ៏សមរម្យសម្រាប់អ្នកទេសចរណ៍ ដែលនឹងនាំអ្នកទៅដល់កន្លែងទេសចរណ៍នានាដោយ
                             សុវត្ថិភាព និងមានភាពងាយស្រួល។ យានជំនិះរបស់យើង និងបុគ្គលិកបើកបរមានបទពិសោធន៍</p>
             
-                            <a href="plan.html">អានបន្ថែម ➔</a>
+                            <a href="/pages/plan.html" @click="closeMobileMenu">អានបន្ថែម ➔</a>
                         </div>
                 </div>
 
@@ -360,7 +366,7 @@
                 <div class="plan-item">
                     <div class="plan-head">
                             <div class="item-icon">
-                                <img src="../visa.png" alt="">
+                                <img src="/assets/images/visa.png" alt="">
                             </div>
 
                             <div class="title">
@@ -373,7 +379,7 @@
                             យ៉ាងដូចម្តេចខ្លះ ហើយគួរសែ្វងយល់និងគួរធ្វើពីអ្វីខ្លះ? កុំបារម្ភ! ពួកយើងបានរៀបចំគម្រោងការ
                             សម្រាប់អ្នករួចហើយ ...</p>
             
-                            <a href="plan.html">អានបន្ថែម ➔</a>
+                            <a href="/pages/plan.html" @click="closeMobileMenu">អានបន្ថែម ➔</a>
                         </div>
                 </div>
             </div>
@@ -385,7 +391,7 @@
                 <div class="plan-item">
                         <div class="plan-head">
                             <div class="item-icon">
-                                <img src="../wallet.png" alt="">
+                                <img src="/assets/images/wallet.png" alt="">
                             </div>
 
                             <div class="title">
@@ -397,7 +403,7 @@
                             <p>ក្រុមហ៊ុនយើងមានកញ្ចប់ធ្វើដំណើរដ៏សមរម្យ និងតមន្លៃសមរម្យបំផុតសម្រាប់ការដឹកធ្វើដំណើរ
                             ទៅកាន់កន្លែងសំខាន់ៗនៅកម្ពុជា។ យើងផ្តល់សេវាកម្មដែលមានគុណភាព​ និងមានភាពងាយស្រួល</p>
             
-                            <a href="plan.html">អានបន្ថែម ➔</a>
+                            <a href="/pages/plan.html" @click="closeMobileMenu">អានបន្ថែម ➔</a>
                         </div>
                 </div>
 
@@ -405,7 +411,7 @@
                 <div class="plan-item">
                     <div class="plan-head">
                             <div class="item-icon">
-                                <img src="../group.png" alt="">
+                                <img src="/assets/images/group.png" alt="">
                             </div>
 
                             <div class="title">
@@ -418,7 +424,7 @@
                             យើងរៀបចំកម្មវិធី និងសកម្មភាពសប្បាយៗ ដើម្បីឲ្យអ្នកទាំងអស់គ្នាអាចរីករាយ និងបង្កើតអនុស្សាវរីយ៍ល្អៗ
                             </p>
             
-                            <a href="plan.html">អានបន្ថែម ➔</a>
+                            <a href="/pages/plan.html" @click="closeMobileMenu">អានបន្ថែម ➔</a>
                         </div>
                 </div>
 
@@ -426,7 +432,7 @@
                 <div class="plan-item">
                     <div class="plan-head">
                             <div class="item-icon">
-                                <img src="../calendar.png" alt="">
+                                <img src="/assets/images/calendar.png" alt="">
                             </div>
 
                             <div class="title">
@@ -439,7 +445,7 @@
                             យ៉ាងដូចម្តេចខ្លះ ហើយគួរសែ្វងយល់និងគួរធ្វើពីអ្វីខ្លះ? កុំបារម្ភ! ពួកយើងបានរៀបចំគម្រោងការ
                             សម្រាប់អ្នករួចហើយ ...</p>
             
-                            <a href="plan.html">អានបន្ថែម ➔</a>
+                            <a href="/pages/plan.html" @click="closeMobileMenu">អានបន្ថែម ➔</a>
                         </div>
                 </div>
 
@@ -447,7 +453,7 @@
                 <div class="plan-item">
                     <div class="plan-head">
                             <div class="item-icon">
-                                <img src="../sleeping.png" alt="">
+                                <img src="/assets/images/sleeping.png" alt="">
                             </div>
 
                             <div class="title">
@@ -460,7 +466,7 @@
                              អ្នកនឹងបានសម្រាកក្នុងបរិយាកាសស្ងប់ស្ងាត់ សុវត្ថិភាពសម្រាប់បង្កើតបទពិសោធន៍ដ៏រីករាយ
                              និងស្រស់ស្អាត</p>
             
-                            <a href="plan.html">អានបន្ថែម ➔</a>
+                            <a href="/pages/plan.html" @click="closeMobileMenu">អានបន្ថែម ➔</a>
                         </div>
                 </div>
             </div>
@@ -493,7 +499,7 @@
 
             <div class="recommend-top">
                 <div class="recommend-items">
-                    <img src="../pub street.png" alt="">
+                    <img src="/assets/images/pub street.png" alt="">
                     
                     
                         <div class="rate">
@@ -509,12 +515,12 @@
                             <p>⚲ សៀមរាប</p>
                         </div>
 
-                    <a href="pub-street.html"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
+                    <a href="/pages/pub-street.html" @click="closeMobileMenu"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
                 </div>
 
 
                 <div class="recommend-items">
-                    <img src="../angkor-wonder-garden.png" alt="">
+                    <img src="/assets/images/angkor-wonder-garden.png" alt="">
                     
                         <div class="rate">
                             <h1>⭐ 4.5</h1>
@@ -529,12 +535,12 @@
                             <p>⚲ សៀមរាប</p>
                         </div>
 
-                    <a href="angkor-garden.html"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
+                    <a href="/pages/angkor-garden.html" @click="closeMobileMenu"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
                 </div>
 
 
                 <div class="recommend-items">
-                    <img src="../phnom-penh-safari.png" alt="">
+                    <img src="/assets/images/phnom-penh-safari.png" alt="">
                     
                         <div class="rate">
                             <h1>⭐ 4.5</h1>
@@ -549,7 +555,7 @@
                             <p>⚲ ភ្នំពេញ</p>
                         </div>
 
-                    <a href="phnompenh-safari.html"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
+                    <a href="/pages/phnompenh-safari.html" @click="closeMobileMenu"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
                 </div>
             </div>
 
@@ -558,7 +564,7 @@
 
             <div class="recommend-bottum">
                 <div class="items">
-                    <img src="../made-in-cambodia-market.png" alt="">
+                    <img src="/assets/images/made-in-cambodia-market.png" alt="">
 
                             <div class="rate2">
                                 <h1>⭐ 4.5</h1>
@@ -573,12 +579,12 @@
                                 <p>⚲ សៀមរាប</p>
                             </div>
 
-                        <a href="made-in-cambodia-market.html"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
+                        <a href="/pages/made-in-cambodia-market.html" @click="closeMobileMenu"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
                 </div>
 
 
                 <div class="items">
-                    <img src="../phnom-penh-night-market.png" alt="">
+                    <img src="/assets/images/phnom-penh-night-market.png" alt="">
 
                             <div class="rate2">
                                 <h1>⭐ 4.5</h1>
@@ -593,12 +599,12 @@
                                 <p>⚲ ភ្នំពេញ</p>
                             </div>
 
-                        <a href="pp-night-market.html"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
+                        <a href="/pages/pp-night-market.html" @click="closeMobileMenu"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
                 </div>
 
 
                 <div class="items">
-                    <img src="../Angkor-National-Museum.png" alt="">
+                    <img src="/assets/images/Angkor-National-Museum.png" alt="">
 
                             <div class="rate2">
                                 <h1>⭐ 4.5</h1>
@@ -613,12 +619,12 @@
                                 <p>⚲ សៀមរាប</p>
                             </div>
 
-                        <a href="angkor-national-museum.html"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
+                        <a href="/pages/angkor-national-museum.html" @click="closeMobileMenu"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
                 </div>
 
 
                 <div class="items">
-                    <img src="../Royal-Palace-phnom-penh.png" alt="">
+                    <img src="/assets/images/Royal-Palace-phnom-penh.png" alt="">
 
                             <div class="rate2">
                                 <h1>⭐ 4.5</h1>
@@ -633,7 +639,7 @@
                                 <p>⚲ ភ្នំពេញ</p>
                             </div>
 
-                        <a href="pp-palace.html"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
+                        <a href="/pages/pp-palace.html" @click="closeMobileMenu"><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></a>
                 </div>
             </div>
         </div>
@@ -770,14 +776,14 @@
             <div class="discount-items">
                 <div class="items-discounts">
                     <div class="items-image">
-                        <a href="angkor-leap.html"><img src="../angkor leap.jpg" alt=""></a>
+                        <a href="/pages/angkor-leap.html" @click="closeMobileMenu"><img src="/assets/images/angkor leap.jpg" alt=""></a>
 
                         <div class="dis-box">
                             <h1>បញ្ចុះតម្លៃ 20%</h1>
                         </div>
 
                         <div class="like-box">
-                            <img src="../heart.png" alt="">
+                            <img src="/assets/images/heart.png" alt="">
                         </div>
                     </div>
 
@@ -801,7 +807,7 @@
                                 <p><strike>150$</strike>/120$ មួយយប់</p>
                             </div>
                             <div class="txt3-2">
-                                <a href="angkor-leap.html"><button>កក់ឥឡូវនេះ</button></a>
+                                <a href="/pages/angkor-leap.html" @click="closeMobileMenu"><button>កក់ឥឡូវនេះ</button></a>
                             </div>
                         </div>
                     </div>
@@ -811,14 +817,14 @@
 
                 <div class="items-discounts">
                     <div class="items-image">
-                        <a href="angkor-leap.html"><img src="../mekong1.jpg" alt=""></a>
+                        <a href="/pages/angkor-leap.html" @click="closeMobileMenu"><img src="/assets/images/mekong1.jpg" alt=""></a>
 
                         <div class="dis-box">
                             <h1>បញ្ចុះតម្លៃ 20%</h1>
                         </div>
 
                         <div class="like-box">
-                            <img src="../heart.png" alt="">
+                            <img src="/assets/images/heart.png" alt="">
                         </div>
                     </div>
 
@@ -842,7 +848,7 @@
                                 <p><strike>150$</strike>/120$ មួយយប់</p>
                             </div>
                             <div class="txt3-2">
-                                <a href="g-mekong-hotel.html"><button>កក់ឥឡូវនេះ</button></a>
+                                <a href="/pages/g-mekong-hotel.html" @click="closeMobileMenu"><button>កក់ឥឡូវនេះ</button></a>
                             </div>
                         </div>
                     </div>
@@ -852,14 +858,14 @@
 
                 <div class="items-discounts">
                     <div class="items-image">
-                        <a href="angkor-leap.html"><img src="../angkor leap.jpg" alt=""></a>
+                        <a href="/pages/angkor-leap.html" @click="closeMobileMenu"><img src="/assets/images/angkor leap.jpg" alt=""></a>
 
                         <div class="dis-box">
                             <h1>បញ្ចុះតម្លៃ 20%</h1>
                         </div>
 
                         <div class="like-box">
-                            <img src="../heart.png" alt="">
+                            <img src="/assets/images/heart.png" alt="">
                         </div>
                     </div>
 
@@ -883,7 +889,7 @@
                                 <p><strike>150$</strike>/120$ មួយយប់</p>
                             </div>
                             <div class="txt3-2">
-                                <a href="angkor-leap.html"><button>កក់ឥឡូវនេះ</button></a>
+                                <a href="/pages/angkor-leap.html" @click="closeMobileMenu"><button>កក់ឥឡូវនេះ</button></a>
                             </div>
                         </div>
                     </div>
@@ -896,14 +902,14 @@
             <div class="discount-items">
                 <div class="items-discounts">
                     <div class="items-image">
-                        <a href="angkor-leap.html"><img src="../baitong-hotel-resort.png" alt=""></a>
+                        <a href="/pages/angkor-leap.html" @click="closeMobileMenu"><img src="/assets/images/baitong-hotel-resort.png" alt=""></a>
 
                         <div class="dis-box">
                             <h1>បញ្ចុះតម្លៃ 20%</h1>
                         </div>
 
                         <div class="like-box">
-                            <img src="../heart.png" alt="">
+                            <img src="/assets/images/heart.png" alt="">
                         </div>
                     </div>
 
@@ -927,7 +933,7 @@
                                 <p><strike>150$</strike>/120$ មួយយប់</p>
                             </div>
                             <div class="txt3-2">
-                                <a href="angkor-leap.html"><button>កក់ឥឡូវនេះ</button></a>
+                                <a href="/pages/angkor-leap.html" @click="closeMobileMenu"><button>កក់ឥឡូវនេះ</button></a>
                             </div>
                         </div>
                     </div>
@@ -937,14 +943,14 @@
 
                 <div class="items-discounts">
                     <div class="items-image">
-                        <a href="angkor-leap.html"><img src="../hotel-kvl.png" alt=""></a>
+                        <a href="/pages/angkor-leap.html" @click="closeMobileMenu"><img src="/assets/images/hotel-kvl.png" alt=""></a>
 
                         <div class="dis-box">
                             <h1>បញ្ចុះតម្លៃ 20%</h1>
                         </div>
 
                         <div class="like-box">
-                            <img src="../heart.png" alt="">
+                            <img src="/assets/images/heart.png" alt="">
                         </div>
                     </div>
 
@@ -968,7 +974,7 @@
                                 <p><strike>150$</strike>/120$ មួយយប់</p>
                             </div>
                             <div class="txt3-2">
-                                <a href="angkor-leap.html"><button>កក់ឥឡូវនេះ</button></a>
+                                <a href="/pages/angkor-leap.html" @click="closeMobileMenu"><button>កក់ឥឡូវនេះ</button></a>
                             </div>
                         </div>
                     </div>
@@ -978,14 +984,14 @@
 
                 <div class="items-discounts">
                     <div class="items-image">
-                        <a href="angkor-leap.html"><img src="../g-mekong-hotel.png" alt=""></a>
+                        <a href="/pages/angkor-leap.html" @click="closeMobileMenu"><img src="/assets/images/g-mekong-hotel.png" alt=""></a>
 
                         <div class="dis-box">
                             <h1>បញ្ចុះតម្លៃ 20%</h1>
                         </div>
 
                         <div class="like-box">
-                            <img src="../heart.png" alt="">
+                            <img src="/assets/images/heart.png" alt="">
                         </div>
                     </div>
 
@@ -1009,7 +1015,7 @@
                                 <p><strike>150$</strike>/120$ មួយយប់</p>
                             </div>
                             <div class="txt3-2">
-                                <a href="angkor-leap.html"><button>កក់ឥឡូវនេះ</button></a>
+                                <a href="/pages/angkor-leap.html" @click="closeMobileMenu"><button>កក់ឥឡូវនេះ</button></a>
                             </div>
                         </div>
                     </div>
@@ -1061,7 +1067,7 @@
             <div class="footer-contents">
                 <div class="footer-box">
                     <div class="foot-about">
-                        <a href="index.html"><img src="../lmlp-logo.png" alt=""></a>
+                        <a href="/" @click="closeMobileMenu"><img src="/assets/images/lmlp-logo.png" alt=""></a>
 
                         <p><b>TOURISMLMLP</b> មិនត្រឹមតែជាគេហទំព័រដែលចែករំលែកកន្លែងដំណើរកំសាន្តនោះទេ​ 
                         ព្រមទាំងផ្តល់សេវាកម្មងាយស្រួលទៅកាន់អតិថិជន​ និងប្រវត្តិសាស្រ្តសង្ខេបតាមខេត្ត
@@ -1072,10 +1078,10 @@
                         <h1>តំណភ្ជាប់រហ័ស</h1>
                         <p>
                             <ul>
-                                <li><a href="#asking">សំណួរ & ចម្លើយ</a></li>
-                                <li><a href="plan.html">ផែនការ</a></li>
+                                <li><a href="#asking" @click="closeMobileMenu">សំណួរ & ចម្លើយ</a></li>
+                                <li><a href="/pages/plan.html" @click="closeMobileMenu">ផែនការ</a></li>
                                 <li><a href="">ដៃគូរសហការ</a></li>
-                                <li><a href="popular-place.html">កន្លែងដែលគួរមកកម្សាន្ត</a></li>
+                                <li><a href="/pages/popular-place.html" @click="closeMobileMenu">កន្លែងដែលគួរមកកម្សាន្ត</a></li>
                             </ul>
                         </p>
                     </div>
@@ -1096,14 +1102,14 @@
                         <h1>ទំនាក់ទំនង</h1>
                         <p>
                             <ul>
-                                <li><a href="https://maps.app.goo.gl/QCnW2yzcaZ1THcQK7"><i class="fa-solid fa-location-dot"></i> Village Trea, 402 Ln, 12352</a></li>
+                                <li><a href="https://maps.app.goo.gl/QCnW2yzcaZ1THcQK7" @click="closeMobileMenu"><i class="fa-solid fa-location-dot"></i> Village Trea, 402 Ln, 12352</a></li>
                                 <li><a href=""><i class="fa-solid fa-phone"></i> (+855) 77777175</a></li>
                                 <li><a href=""><i class="fa-solid fa-envelope"></i> pse-ngo@gmail.com</a></li>
                                 <li>
                                     <a href="">
                                         <b>FOLLOW US</b> <br>
-                                            <a href="https://web.facebook.com/psecambodia"><i class="fa-brands fa-facebook"></i></a>
-                                            <a href="https://www.instagram.com/pse_cambodia/"><i class="fa-brands fa-instagram"></i></a>
+                                            <a href="https://web.facebook.com/psecambodia" @click="closeMobileMenu"><i class="fa-brands fa-facebook"></i></a>
+                                            <a href="https://www.instagram.com/pse_cambodia/" @click="closeMobileMenu"><i class="fa-brands fa-instagram"></i></a>
                                             <a href=""><i class="fa-brands fa-x-twitter"></i></a>
                                             <a href=""><i class="fa-brands fa-tiktok"></i></a>
                                             <a href=""><i class="fa-brands fa-pinterest-p"></i></a>
@@ -1125,7 +1131,12 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted } from "vue";
+import { onBeforeUnmount, onMounted, ref } from "vue";
+
+const isMobileMenuOpen = ref(false);
+const closeMobileMenu = () => {
+  isMobileMenuOpen.value = false;
+};
 
 let sliderTimer;
 const cleanups = [];

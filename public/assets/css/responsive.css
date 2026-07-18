@@ -1,0 +1,315 @@
+/* Shared responsive layer for all static pages. Desktop styles remain owned by each page CSS. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+body { overflow-x: hidden; }
+img, video, iframe { max-width: 100%; }
+
+@media (max-width: 1199px) {
+  body { min-width: 0 !important; }
+
+  .head,
+  .slider,
+  .slider-image,
+  .container,
+  .footer,
+  .footer-contents,
+  .container-head-cover,
+  .content-intro,
+  .partner {
+    min-width: 0 !important;
+  }
+
+  .navbar,
+  .container,
+  .footer-box,
+  .container-head-cover,
+  .content,
+  .content-image,
+  .content-cover,
+  .team,
+  .vision,
+  .mission,
+  .values {
+    width: min(100% - 32px, 1040px) !important;
+    max-width: 1040px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .slider { width: 100% !important; }
+
+  .slider-image,
+  .content-image,
+  .image-top,
+  .image-buttom,
+  .popular-contents,
+  .popular-links,
+  .row,
+  .row-2,
+  .fun-content,
+  .rest-content,
+  .detail,
+  .accessary,
+  .footer-box,
+  .infor-items,
+  .items-content-cover,
+  .about-cover,
+  .team-cover,
+  .discount-items {
+    max-width: 100% !important;
+  }
+
+  .popular-contents,
+  .rest-content,
+  .accessary,
+  .discount-items,
+  .infor-items,
+  .items-content-cover,
+  .team-cover {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .popular-contents .items,
+  .card-restplace,
+  .items-discounts,
+  .accessary-items,
+  .infor-items .items,
+  .items-content,
+  .team-items {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .content,
+  .detail,
+  .form,
+  .payment,
+  .the-infor,
+  .date-in-out {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .footer-contents { border-radius: 90px 0 0 0 !important; }
+  .footer-box { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 28px !important; overflow: visible !important; }
+  .foot-about, .foot { width: 100% !important; margin: 0 !important; float: none !important; }
+}
+
+@media (max-width: 900px) {
+  html { scroll-padding-top: 76px; }
+
+  .head {
+    min-width: 0 !important;
+    height: 74px !important;
+    min-height: 74px !important;
+    overflow: visible !important;
+    box-shadow: 0 10px 28px rgba(0,0,0,.22);
+  }
+
+  .navbar {
+    width: calc(100% - 28px) !important;
+    height: 74px !important;
+    min-height: 74px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .logo { width: auto !important; flex: 0 0 auto !important; overflow: visible !important; }
+  .logo img { width: 82px !important; max-height: 64px !important; object-fit: contain !important; float: none !important; }
+
+  .nav-toggle {
+    display: inline-flex !important;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid rgba(255,255,255,.24);
+    border-radius: 10px;
+    background: rgba(255,255,255,.08);
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 999px;
+    background: #fff;
+    transition: transform .22s ease, opacity .22s ease;
+  }
+
+  .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .menu {
+    position: fixed !important;
+    top: 84px !important;
+    left: 14px !important;
+    right: 14px !important;
+    width: auto !important;
+    max-height: calc(100svh - 104px) !important;
+    display: block !important;
+    overflow-y: auto !important;
+    padding: 12px !important;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 16px;
+    background: rgb(48,58,64);
+    box-shadow: 0 22px 55px rgba(0,0,0,.32);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity .22s ease, transform .22s ease, visibility .22s ease;
+    z-index: 10000;
+  }
+
+  .menu.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+  .menu ul { display: grid !important; grid-template-columns: 1fr !important; width: 100% !important; min-width: 0 !important; gap: 6px !important; }
+  .menu ul li { width: 100% !important; float: none !important; }
+  .menu > ul > li > a {
+    display: block !important;
+    width: 100% !important;
+    white-space: normal !important;
+    border-radius: 10px;
+    padding: 12px 14px !important;
+    background: rgba(255,255,255,.06);
+    color: rgb(196,214,84) !important;
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+    text-align: left !important;
+  }
+
+  .dropdown-content {
+    position: static !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    min-width: 0 !important;
+    max-height: none !important;
+    margin-top: 8px !important;
+    padding: 10px !important;
+    border-radius: 12px !important;
+    background: rgba(255,255,255,.96) !important;
+    box-shadow: none !important;
+  }
+
+  .province-list { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 6px !important; font-size: 13px !important; }
+  .province-list li a { padding: 8px 10px !important; text-align: left !important; }
+
+  .slider {
+    height: auto !important;
+    min-height: 420px !important;
+    margin-top: 74px !important;
+    overflow: hidden !important;
+  }
+
+  .slider-image, .slide { height: 420px !important; min-height: 420px !important; }
+  .slider-image img, .slide img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .text-slider { width: calc(100% - 32px) !important; left: 16px !important; right: 16px !important; top: 50% !important; transform: translateY(-50%) !important; }
+  .text-slider h1 { font-size: clamp(34px, 8vw, 58px) !important; line-height: 1.08 !important; }
+
+  .container { width: calc(100% - 28px) !important; margin-top: 24px !important; }
+  .container > h1, .container h1 { font-size: clamp(26px, 7vw, 42px) !important; line-height: 1.25 !important; }
+
+  .content,
+  .row,
+  .row-2,
+  .content-image,
+  .image-top,
+  .detail,
+  .date-in-out,
+  .popular-contents,
+  .popular-links,
+  .footer-box {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .content > *, .row > *, .row-2 > *, .content-image > *, .image-top > *, .detail > *, .popular-contents > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    float: none !important;
+  }
+
+  .content img,
+  .left-side img,
+  .right-side img,
+  .top img,
+  .buttom-img img,
+  .right-img img,
+  .item-img img,
+  .items-image img,
+  .content-image img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+  }
+
+  .left-side .slide { position: relative !important; display: block !important; opacity: 1 !important; height: auto !important; min-height: 0 !important; margin-bottom: 12px; }
+  .right-box { min-height: 220px !important; }
+  .map iframe { height: 300px !important; }
+
+  .popular-links { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .popular-links a, .popular-links button { width: 100% !important; }
+
+  .popular-contents,
+  .rest-content,
+  .accessary,
+  .discount-items,
+  .infor-items,
+  .items-content-cover,
+  .team-cover {
+    grid-template-columns: 1fr !important;
+  }
+
+  .items,
+  .card-restplace,
+  .items-discounts,
+  .accessary-items,
+  .infor-items .items,
+  .items-content,
+  .team-items {
+    padding: 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .items-txt, .txt1, .txt2, .txt3, .item-text { height: auto !important; }
+  .txt1-1, .txt1-2, .txt3-1, .txt3-2 { width: 100% !important; height: auto !important; float: none !important; display: block !important; text-align: left !important; }
+  .txt3-2 button { width: 100% !important; height: 46px !important; }
+
+  .footer-contents { min-width: 0 !important; margin-top: 48px !important; border-radius: 44px 0 0 0 !important; padding: 30px 14px 20px !important; }
+  .foot-about img { width: 110px !important; }
+  .foot h1 { font-size: 24px !important; }
+  .foot ul li a, .foot li, .foot-about p { font-size: 15px !important; line-height: 1.8 !important; }
+}
+
+@media (max-width: 520px) {
+  .navbar { width: calc(100% - 24px) !important; }
+  .logo img { width: 70px !important; }
+  .nav-toggle { width: 40px !important; height: 40px !important; flex-basis: 40px !important; }
+  .menu { left: 12px !important; right: 12px !important; top: 76px !important; max-height: calc(100svh - 92px) !important; }
+  .menu > ul > li > a { font-size: 15px !important; padding: 11px 12px !important; }
+  .slider { min-height: 340px !important; }
+  .slider-image, .slide { height: 340px !important; min-height: 340px !important; }
+  .text-slider h1 { font-size: clamp(28px, 11vw, 42px) !important; }
+  .popular-links { grid-template-columns: 1fr !important; }
+  .province-list { grid-template-columns: 1fr !important; }
+}
